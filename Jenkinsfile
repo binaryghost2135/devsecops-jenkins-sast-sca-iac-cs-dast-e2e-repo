@@ -7,8 +7,8 @@ pipeline {
   stages {
     stage('CompileandRunSonarAnalysis') {
       steps {
-        withCredentials([string(credentialsId: 'SONAR_TOKEN', variable: 'SONAR_TOKEN')]) {
-          bat("mvn -Dmaven.test.failure.ignore verify sonar:sonar -Dsonar.login=$SONAR_TOKEN -Dsonar.projectKey=easybuggy -Dsonar.host.url=http://localhost:9000/")
+        withCredentials([string(credentialsId: 'sqp_ec899f6777977b7467c376643c3c1c29664355bc', variable: 'sqp_ec899f6777977b7467c376643c3c1c29664355bc')]) {
+          bat("mvn -Dmaven.test.failure.ignore verify sonar:sonar -Dsonar.login=$sqp_ec899f6777977b7467c376643c3c1c29664355bc -Dsonar.projectKey=Goutham2135Java -Dsonar.host.url=http://localhost:9000/")
         }
       }
     }

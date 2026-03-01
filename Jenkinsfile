@@ -20,7 +20,7 @@ pipeline {
     }
     stage('Build') {
       steps {
-        withDockerRegistry([credentialsId: "dockerlogin", url: ""]) {
+        withDockerRegistry([credentialsId: "dockerlogin", url: "https://index.docker.io/v1/"]) {
           script {
             app = docker.build("goutham2135/testeb")
           }

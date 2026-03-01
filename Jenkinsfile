@@ -22,7 +22,7 @@ pipeline {
       steps {
         withDockerRegistry([credentialsId: "dockerlogin", url: ""]) {
           script {
-            app = docker.build("goutham2135/testbug")
+            app = docker.build("goutham2135/testeb")
           }
         }
       }

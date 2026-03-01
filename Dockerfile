@@ -1,4 +1,4 @@
-FROM maven:3.9-jdk-21 as builder
+FROM maven:3.9.6-jdk-21 as builder
 COPY . /usr/src/easybuggy/
 WORKDIR /usr/src/easybuggy/
 RUN mvn -B package

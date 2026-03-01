@@ -60,7 +60,7 @@ pipeline {
 
     stage('checkov') {
       steps {
-        bat("checkov -s -f main.tf")
+        bat('"D:\\pythonn\\Scripts\\checkov.exe" -s -f main.tf')
       }
     }
 

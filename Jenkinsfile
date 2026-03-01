@@ -10,8 +10,8 @@ pipeline {
         withCredentials([string(credentialsId: 'Sonarqubee', variable: 'Sonarqubee')]) {
           bat'''
           mvn clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar ^
-            -Dsonar.projectKey=Test2 ^
-            -Dsonar.projectName=Test2 ^
+            -Dsonar.projectKey=Mavenn ^
+            -Dsonar.projectName=Mavenn ^
             -Dsonar.host.url=http://localhost:9000 ^
             -Dsonar.token=%Sonarqubee%
           '''

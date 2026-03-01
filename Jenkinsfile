@@ -7,8 +7,14 @@ pipeline {
   stages {
     stage('CompileandRunSonarAnalysis') {
       steps {
-        withCredentials([string(credentialsId: 'SONAR_TOKEN', variable: 'SONAR_TOKEN')]) {
-          bat("mvn -Dmaven.test.failure.ignore verify sonar:sonar -Dsonar.login=$SONAR_TOKEN -Dsonar.projectKey=Goutham2135Java -Dsonar.host.url=http://localhost:9000/")
+        withCredentials([string(credentialsId: 'Sonarqubee', variable: 'Sonarqubee')]) {
+          bat'''
+          mvn clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar ^
+            -Dsonar.projectKey=Test2 ^
+            -Dsonar.projectName=Test2 ^
+            -Dsonar.host.url=http://localhost:9000 ^
+            -Dsonar.token=%Sonarqubee%
+          '''
         }
       }
     }

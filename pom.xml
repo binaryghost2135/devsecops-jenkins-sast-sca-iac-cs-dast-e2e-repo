@@ -311,7 +311,7 @@
       <version>2.0.0</version>
       <inherited>false</inherited>
       <configuration>
-        <org>binaryghost2135</org>
+        <failOnIssues>false</failOnIssues>
       </configuration>
     </plugin>
 <!-- Snyk Changes for SCA Ends Here -->

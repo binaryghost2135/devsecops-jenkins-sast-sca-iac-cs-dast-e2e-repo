@@ -311,8 +311,10 @@
       <version>2.0.0</version>
       <inherited>false</inherited>
       <configuration>
-		<org>binaryghost2135</org>
-        <failOnIssues>false</failOnIssues>
+		<apiToken>${env.SNYK_TOKEN}</apiToken>
+		<args>
+          <arg>--org=binaryghost2135</arg>
+        </args>
       </configuration>
     </plugin>
 <!-- Snyk Changes for SCA Ends Here -->

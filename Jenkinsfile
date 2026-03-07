@@ -45,7 +45,9 @@ pipeline {
     stage('RunSnykSCA') {
       steps {
         withCredentials([string(credentialsId: 'SNYK_TOKEN', variable: 'SNYK_TOKEN')]) {
-          bat("mvn snyk:test -fn")
+          withEnv(["SNYK_TOKEN=${SNYK_TOKEN}"]) {
+            bat("mvn snyk:test -fn")
+          }  
         }
       }
     }

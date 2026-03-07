@@ -65,6 +65,7 @@ pipeline {
     stage('checkov') {
       steps {
         bat'''
+        set PATH=D:\\pythonn;D:\\pythonn\\Scripts;%PATH%
         checkov -s -f main.tf
         '''
       }
